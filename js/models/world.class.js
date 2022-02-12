@@ -30,7 +30,6 @@ class World {
         this.addObjectToMap(this.backgroundObjects);
         this.addObjectToMap(this.clouds);
 
-
         let self = this;
         requestAnimationFrame(function() {
             self.draw();
