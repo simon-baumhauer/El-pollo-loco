@@ -1,5 +1,6 @@
 class Character extends MovableObject {
     world;
+    y = 80;
     speed = 10;
     walking_sound = new Audio('audio/cartoon_footsteps_walking_fast_jogging.mp3')
     IMAGES_WALKING = [
@@ -16,7 +17,7 @@ class Character extends MovableObject {
     constructor() {
         super().loadImage('img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png');
         this.loadImages(this.IMAGES_WALKING);
-
+        this.applyGravity();
         this.animate();
     }
 
