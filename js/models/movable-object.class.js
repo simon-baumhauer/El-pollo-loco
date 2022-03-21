@@ -24,10 +24,6 @@ class MovableObject {
             return this.y < 180;
         }
 
-        isOnGround() {
-            return this.y > 185;
-        }
-
 
     loadImage(path) {
         this.img = new Image();
@@ -50,10 +46,16 @@ class MovableObject {
         this.currentImage++;
     }
 
+    moveRight() {
+        this.x += this.speed;
+    }
+
     moveLeft() {
-        setInterval(() => {
-            this.x -= this.speed;
-        }, 1000 / 60);
+        this.x -= this.speed;
+    }
+
+    jump() {
+        return this.speedY = 30;
     }
 
 }

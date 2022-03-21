@@ -1,6 +1,6 @@
 class Character extends MovableObject {
     world;
-    y = 80;
+    y = 0;
     speed = 10;
     walking_sound = new Audio('audio/cartoon_footsteps_walking_fast_jogging.mp3')
     IMAGES_WALKING = [
@@ -38,23 +38,21 @@ class Character extends MovableObject {
         setInterval(() => {
             this.walking_sound.pause();
             if (this.world.keyboard.LEFT && this.x > 0) {
-                this.x -= this.speed;
-                this.otherDirection = true;
+                this.moveLeft();
                 this.walking_sound.play();
+                this.otherDirection = true;
             }
             if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
-                this.x += this.speed;
-                this.otherDirection = false;
-                this.walking_sound.play();
+               this.moveRight();
+               this.walking_sound.play();
+               this.otherDirection = false;
             }
 
-            if(this.isOnGround()) {
-                if (this.world.keyboard.UP) {
-                    this.speedY = 20;
-                }
-    
+            if (this.world.keyboard.SPACE && !this.isAboveGround()) {
+                    this.speedY = 30;
             }
-         
+    
+            
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
 
@@ -70,9 +68,5 @@ class Character extends MovableObject {
                 }
             }
         }, 60);
-    }
-
-    jump() {
-
     }
 }
