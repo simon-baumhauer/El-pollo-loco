@@ -33,12 +33,20 @@ class World {
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
         this.ctx.translate(this.camera_x, 0);
         this.addObjectToMap(this.level.backgroundObjects);
-        this.addObjectToMap(this.level.clouds);
-        this.addToMap(this.character);
+        
+
+        this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.statusBar);
+        this.ctx.translate(this.camera_x, 0);
+      
+
+        this.addToMap(this.character);
+        this.addObjectToMap(this.level.clouds);
         this.addObjectToMap(this.level.enemies);
+
         this.ctx.translate(-this.camera_x, 0);
 
         let self = this;
