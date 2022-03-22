@@ -1,5 +1,6 @@
 class World {
     character = new Character();
+    statusBar = new StatusBar();
     level = level_1;
     ctx;
     canvas;
@@ -36,6 +37,7 @@ class World {
         this.addObjectToMap(this.level.backgroundObjects);
         this.addObjectToMap(this.level.clouds);
         this.addToMap(this.character);
+        this.addToMap(this.statusBar);
         this.addObjectToMap(this.level.enemies);
         this.ctx.translate(-this.camera_x, 0);
 
