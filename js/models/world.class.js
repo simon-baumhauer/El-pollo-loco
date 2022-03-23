@@ -1,11 +1,11 @@
 class World {
     character = new Character();
-    statusBar = new StatusBar();
     level = level_1;
     ctx;
     canvas;
     keyboard;
     camera_x = -100;
+    statusBar = new StatusBar();
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -20,16 +20,16 @@ class World {
         this.character.world = this;
     }
 
-    checkCollsion() {
-        setInterval(() => {
-            this.level.enemies.forEach( (enemy) => {
+     checkCollsion() {
+         setInterval(() => {
+             this.level.enemies.forEach( (enemy) => {
                 if (this.character.isColliding(enemy)) {
-                    this.character.hit();
-                    console.log('Collison with Character', this.character.energy)
+                     this.character.hit();
+                     this.statusBar.setPercentage(this.character.energy);
                 }
             });
         }, 200);
-    }
+     }
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -37,7 +37,7 @@ class World {
         this.ctx.translate(this.camera_x, 0);
         this.addObjectToMap(this.level.backgroundObjects);
         
-
+        // --- Fixed Object --- 
         this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.statusBar);
         this.ctx.translate(this.camera_x, 0);
