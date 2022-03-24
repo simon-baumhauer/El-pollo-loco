@@ -34,6 +34,14 @@ class DrawableObject {
         } 
     }
 
+    drawButton(ctx) {
+            ctx.beginPath();
+            const path = new Path2D()
+            path.rect(250, 350, 200, 100)
+            path.rect(25,72,32,32)
+            path.closePath()
+    }
+
 }
 
 
