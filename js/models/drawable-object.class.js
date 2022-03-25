@@ -36,10 +36,10 @@ class DrawableObject {
 
     drawButton(ctx) {
             ctx.beginPath();
-            const path = new Path2D()
-            path.rect(250, 350, 200, 100)
-            path.rect(25,72,32,32)
-            path.closePath()
+            ctx.rect(0, 0, 200, 200)
+            ctx.fillStyle = 'blue';
+            ctx.rect(25,72,32,32)
+            ctx.closePath()
     }
 
 }

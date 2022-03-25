@@ -3,6 +3,10 @@ let world;
 let keyboard = new Keyboard();
 let space = 'Space';
 
+
+/**
+ * This function insert the world object into the canvas object
+ */
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard)

@@ -7,7 +7,7 @@ class World {
     camera_x = -100;
     statusBar = new StatusBar();
     throwableObjects = [];
-    startScreen = new StartScreen();
+    startScreen = new Image();
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -49,6 +49,7 @@ class World {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.translate(this.camera_x, 0);
         this.addObjectToMap(this.level.backgroundObjects);
+        this.addObjectToMap(this.level.clouds);
         
         // --- Fixed Object --- 
         this.ctx.translate(-this.camera_x, 0);
@@ -57,12 +58,9 @@ class World {
       
 
         this.addToMap(this.character);
-        this.addObjectToMap(this.level.clouds);
         this.addObjectToMap(this.level.enemies);
         this.addObjectToMap(this.throwableObjects);
-
         this.ctx.translate(-this.camera_x, 0);
-        this.addToMap(this.startScreen);
         let self = this;
         requestAnimationFrame(function() {
             self.draw();
