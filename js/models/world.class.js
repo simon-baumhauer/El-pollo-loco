@@ -7,7 +7,7 @@ class World {
     camera_x = -100;
     statusBar = new StatusBar();
     throwableObjects = [];
-    startScreen = new Image();
+    startScreen = new StartScreen();
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -45,27 +45,29 @@ class World {
         });
      }
 
-    draw() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.translate(this.camera_x, 0);
-        this.addObjectToMap(this.level.backgroundObjects);
-        this.addObjectToMap(this.level.clouds);
+     draw() {
+         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+         this.ctx.translate(this.camera_x, 0);
+         this.addObjectToMap(this.level.backgroundObjects);
+         this.addObjectToMap(this.level.clouds);
         
-        // --- Fixed Object --- 
-        this.ctx.translate(-this.camera_x, 0);
-        this.addToMap(this.statusBar);
-        this.ctx.translate(this.camera_x, 0);
+         // --- Fixed Object --- 
+         this.ctx.translate(-this.camera_x, 0);
+         this.addToMap(this.statusBar);
+         this.ctx.translate(this.camera_x, 0);
       
 
-        this.addToMap(this.character);
-        this.addObjectToMap(this.level.enemies);
-        this.addObjectToMap(this.throwableObjects);
-        this.ctx.translate(-this.camera_x, 0);
-        let self = this;
-        requestAnimationFrame(function() {
-            self.draw();
-        });
-    }
+         this.addToMap(this.character);
+         this.addObjectToMap(this.level.enemies);
+         this.addObjectToMap(this.throwableObjects);
+         this.ctx.translate(-this.camera_x, 0);
+         let self = this;
+         requestAnimationFrame(function() {
+             self.draw();
+         });
+     }
+
+    
 
     addObjectToMap(objects) {
         objects.forEach(o => {

@@ -11,3 +11,16 @@ canvas {
 .d-none {
     display: none;
 }
+
+button {
+    z-index: 1;
+    position: absolute;
+    top: 520px;
+    width: 200px;
+    height: 30px;
+    background-color: rgb(255, 220, 3);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}

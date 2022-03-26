@@ -1,4 +1,4 @@
-class DrawableObject {
+class DrawableObject{
     x = 120;
     y = 190;
     width = 150;
@@ -6,6 +6,7 @@ class DrawableObject {
     img;
     imageCache = {};
     currentImage = 0;
+
 
     loadImage(path) {
         this.img = new Image();

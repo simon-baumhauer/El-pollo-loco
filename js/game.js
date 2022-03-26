@@ -2,7 +2,7 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 let space = 'Space';
-
+let mySound;
 
 /**
  * This function insert the world object into the canvas object
