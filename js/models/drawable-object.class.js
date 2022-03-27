@@ -35,14 +35,6 @@ class DrawableObject{
         } 
     }
 
-    drawButton(ctx) {
-            ctx.beginPath();
-            ctx.rect(0, 0, 200, 200)
-            ctx.fillStyle = 'blue';
-            ctx.rect(25,72,32,32)
-            ctx.closePath()
-    }
-
 }
 
 

@@ -2,15 +2,16 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 let space = 'Space';
-let mySound;
+background_sound = new Audio('audio/background_sound.mp3')
 
 /**
  * This function insert the world object into the canvas object
  */
 function init() {
     canvas = document.getElementById('canvas');
-    world = new World(canvas, keyboard)
+    world = new World(canvas, keyboard);
 }
+
 
 window.addEventListener('keydown', (event) => {
     if (event.keyCode === 39) {
