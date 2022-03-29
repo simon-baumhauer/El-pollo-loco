@@ -6,6 +6,8 @@ class World {
     keyboard;
     camera_x = -100;
     statusBar = new StatusBar();
+    coinsBar = new CoinsBar();
+    bottlesBar = new BottlesBar();
     throwableObjects = [];
     startScreen = new StartScreen();
 
@@ -43,6 +45,22 @@ class World {
                  this.statusBar.setPercentage(this.character.energy);
             }
         });
+        this.level.bottles.forEach( (bottle, index) => {
+            if (this.character.isColliding(bottle)) {
+                 this.character.chargeBottle(bottle);
+                 this.bottlesBar.setPercentage(this.character.bottles);
+                 this.level.bottles.splice(index, 1);
+            }
+
+        });
+        this.level.coins.forEach( (coins, index) => {
+            if (this.character.isColliding(coins)) {
+                 this.character.chargeCoins();
+                 this.coinsBar.setPercentage(this.character.coins);
+                 this.level.coins.splice(index, 1);
+            }
+        });
+    
      }
 
      draw() {
@@ -54,6 +72,8 @@ class World {
          // --- Fixed Object --- 
          this.ctx.translate(-this.camera_x, 0);
          this.addToMap(this.statusBar);
+         this.addToMap(this.coinsBar);
+         this.addToMap(this.bottlesBar);
          this.ctx.translate(this.camera_x, 0);
       
 
@@ -100,5 +120,5 @@ class World {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
-
 }
+

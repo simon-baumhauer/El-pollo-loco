@@ -9,3 +9,4 @@ class Coins extends DrawableObject{
     this.x = 550 + Math.random() * 1000;
   }
 }
+

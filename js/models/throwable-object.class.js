@@ -6,8 +6,9 @@ class TrowableObeject extends MovableObject{
         this.y = y;
         this.height = 100;
         this.width = 100;
-        this.throw();
+            this.throw();
     }
+
 
     throw() {
         this.speedY = 30;
@@ -15,6 +16,7 @@ class TrowableObeject extends MovableObject{
         setInterval(() => {
             this.x += 10;
         }, 25);
+        this.bottles -= 20;
     }
 
 }

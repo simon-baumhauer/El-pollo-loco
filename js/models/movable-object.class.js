@@ -4,6 +4,8 @@ class MovableObject extends DrawableObject{
     speedY = 0;
     acceleration = 2.5;
     energy = 100;
+    bottles = 0;
+    coins = 0;
     lastHit = 0;
 
     applyGravity(){
@@ -38,6 +40,14 @@ class MovableObject extends DrawableObject{
             this.lastHit = new Date().getTime();
         }
     }
+
+    chargeCoins() {
+        this.coins += 20;
+      }
+
+    chargeBottle() {
+        this.bottles += 20;
+      }
 
     isHurt() {
         let timepassed = new Date().getTime() - this.lastHit;

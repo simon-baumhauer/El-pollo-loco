@@ -29,7 +29,7 @@ window.addEventListener('keydown', (event) => {
     if (event.keyCode === 32) {
         keyboard.SPACE = true;
     }
-    if (event.keyCode === 68) {
+    if (event.keyCode === 68 && world.character.bottles > 0) {
         keyboard.D = true;
     }
 });
@@ -54,3 +54,4 @@ window.addEventListener('keyup', (event) => {
         keyboard.D = false;
     }
 });
+
