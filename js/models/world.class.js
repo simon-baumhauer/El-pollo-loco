@@ -10,6 +10,7 @@ class World {
     bottlesBar = new BottlesBar();
     throwableObjects = [];
     startScreen = new StartScreen();
+    endboss = new Endboss();
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -32,9 +33,11 @@ class World {
      }
 
      checkThrowObjects() {
-         if (this.keyboard.D) {
+         if (this.keyboard.D && this.character.bottles > 0) {
              let bottle = new TrowableObeject(this.character.x, this.character.y);
              this.throwableObjects.push(bottle);
+             this.character.bottles -= 20;
+             this.bottlesBar.setPercentage(this.character.bottles);
          }
      }
 
@@ -51,7 +54,6 @@ class World {
                  this.bottlesBar.setPercentage(this.character.bottles);
                  this.level.bottles.splice(index, 1);
             }
-
         });
         this.level.coins.forEach( (coins, index) => {
             if (this.character.isColliding(coins)) {
@@ -60,7 +62,12 @@ class World {
                  this.level.coins.splice(index, 1);
             }
         });
-    
+        this.throwableObjects.forEach( (bottle, index) => {
+            if (this.endboss.isColliding(bottle)) {
+                this.throwableObjects.splice(index, 1);
+                this.endboss.hit();
+            }
+        });
      }
 
      draw() {
