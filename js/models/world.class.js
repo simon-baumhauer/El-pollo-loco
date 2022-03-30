@@ -44,7 +44,7 @@ class World {
      checkColisons() {
         this.level.enemies.forEach( (enemy) => {
             if (this.character.isColliding(enemy)) {
-                 this.character.hit();
+                 this.character.hit(5);
                  this.statusBar.setPercentage(this.character.energy);
             }
         });
@@ -65,7 +65,8 @@ class World {
         this.throwableObjects.forEach( (bottle, index) => {
             if (this.endboss.isColliding(bottle)) {
                 this.throwableObjects.splice(index, 1);
-                this.endboss.hit();
+                this.endboss.hit(20);
+                console.log(this.endboss.energy);
             }
         });
      }
@@ -128,4 +129,3 @@ class World {
         this.ctx.restore();
     }
 }
-
