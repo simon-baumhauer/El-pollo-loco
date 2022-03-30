@@ -17,6 +17,6 @@ function startGame() {
     start_btn.classList.add('d-none');
     start_screen.classList.add('d-none');
     myMusic = new Audio("audio/background_sound.mp3");
-    myMusic.stop();
+    // myMusic.stop();
     init();
 }
