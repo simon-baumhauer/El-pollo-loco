@@ -32,22 +32,12 @@ class Endboss extends MovableObject {
     animate() {
         setInterval(() => {
                 if(this.isDead()) {
-                    console.log('endboss is dead');
                     this.playAnimation(this.IMAGES_DEAD);
-                } else if (this.energy > 1) {
+                } else  {
                     this.playAnimation(this.IMAGES_WALKING);
-                    console.log(this.energy)
                 }
         }, 1000 / 10);
 
-        
-        
-        // setInterval(() => {
-        //     if(this.isDead()) {
-        //         console.log('endboss is dead');
-        //         this.playAnimation(this.IMAGES_DEAD);
-        //     }
-        //     }, 60);
     }
 
 

@@ -10,7 +10,7 @@ class World {
     bottlesBar = new BottlesBar();
     throwableObjects = [];
     startScreen = new StartScreen();
-    endboss = new Endboss();
+    endboss = level_1.enemies.find( e => e instanceof Endboss) ;
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
