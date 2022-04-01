@@ -1,17 +1,27 @@
-class StartScreen extends DrawableObject{
+ class GAMEOVERSCREEN extends MovableObject {
+
+        GAMEOVER = [
+            'img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png'
+        ]
     
     
+  
     constructor() {
-        super().loadImage('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
+        super().loadImage(this.GAMEOVER[0]);
         this.x = 0;
         this.y = 0;
         this.width = 720;
         this.height = 480;
+        this.animate();
     }
+
+    animate() {
+        this.playAnimation(this.GAMEOVER);
+    }
+
 }
 
-
-function startGame() {
+ function startGame() {
     let start_btn = document.getElementById('start-btn');
     let start_screen = document.getElementById('start-screen');
     start_btn.classList.add('d-none');
@@ -20,3 +30,4 @@ function startGame() {
     myMusic.stop();
     init();
 }
+

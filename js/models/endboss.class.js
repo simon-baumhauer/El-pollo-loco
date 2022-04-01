@@ -21,10 +21,16 @@ class Endboss extends MovableObject {
         'img/4.Secuencias_Enemy_giganton-Dona_Gallinota-/4.Muerte/G26.png'
     ];
 
+    GAMEOVER = [
+        'img/9.Intro _ Outro Image/_Game over_ screen/4.Game over!.png',
+      
+    ];
+
     constructor() {
         super().loadImage(this.IMAGES_WALKING[0]);
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_DEAD);
+        this.loadImages(this.GAMEOVER);
         this.x = 2500;
         this.animate();
     }
@@ -33,12 +39,18 @@ class Endboss extends MovableObject {
         setInterval(() => {
                 if(this.isDead()) {
                     this.playAnimation(this.IMAGES_DEAD);
+                   setInterval(() => {
+                    this.x = 2020;
+                    this.y = 0;
+                    this.height = 500;
+                    this.width = 820;
+                    this.playAnimation(this.GAMEOVER);
+                   }, 1000);
                 } else  {
                     this.playAnimation(this.IMAGES_WALKING);
                 }
         }, 1000 / 10);
 
     }
-
 
 }

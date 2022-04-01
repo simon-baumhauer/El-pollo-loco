@@ -9,7 +9,6 @@ class World {
     coinsBar = new CoinsBar();
     bottlesBar = new BottlesBar();
     throwableObjects = [];
-    startScreen = new StartScreen();
     endboss = level_1.enemies.find( e => e instanceof Endboss) ;
 
     constructor(canvas, keyboard) {
@@ -66,7 +65,6 @@ class World {
             if (this.endboss.isColliding(bottle)) {
                 this.throwableObjects.splice(index, 1);
                 this.endboss.hit(20);
-                console.log(this.endboss.energy);
             }
         });
      }
@@ -90,14 +88,15 @@ class World {
          this.addObjectToMap(this.level.bottles);
          this.addObjectToMap(this.level.enemies);
          this.addObjectToMap(this.throwableObjects);
+          if (this.endboss.energy === 0) {
+            this.keyboard = false;
+          }
          this.ctx.translate(-this.camera_x, 0);
          let self = this;
          requestAnimationFrame(function() {
              self.draw();
          });
      }
-
-    
 
     addObjectToMap(objects) {
         objects.forEach(o => {
