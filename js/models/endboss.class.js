@@ -45,6 +45,7 @@ class Endboss extends MovableObject {
                     this.height = 500;
                     this.width = 820;
                     this.playAnimation(this.GAMEOVER);
+                    document.getElementById('start-btn').classList.remove('d-none');
                    }, 1000);
                 } else  {
                     this.playAnimation(this.IMAGES_WALKING);

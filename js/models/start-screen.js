@@ -22,12 +22,14 @@
 }
 
  function startGame() {
+    initLevel();
     let start_btn = document.getElementById('start-btn');
     let start_screen = document.getElementById('start-screen');
     start_btn.classList.add('d-none');
     start_screen.classList.add('d-none');
-    myMusic = new Audio("audio/background_sound.mp3");
-    myMusic.stop();
-    init();
+   
+    
 }
 
+// myMusic = new Audio("audio/background_sound.mp3");
+// myMusic.stop();
