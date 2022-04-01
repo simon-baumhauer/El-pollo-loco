@@ -90,9 +90,9 @@ class World {
          this.addObjectToMap(this.level.bottles);
          this.addObjectToMap(this.level.enemies);
          this.addObjectToMap(this.throwableObjects);
-        //   if (this.endboss.energy === 0) {
-        //     this.keyboard = false;
-        //   }
+           if (this.endboss.energy === 0) {
+             this.keyboard = false;
+               }
          this.ctx.translate(-this.camera_x, 0);
          let self = this;
          requestAnimationFrame(function() {
