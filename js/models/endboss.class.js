@@ -37,25 +37,54 @@ class Endboss extends MovableObject {
 
     animate() {
         let i = 0;
-        setInterval(() => {
-                if(this.isDead()) {
-                    i++;
-                    this.playAnimation(this.IMAGES_DEAD);
-                    if (i > 10) {
-                        setInterval(() => {
-                            this.x = 2020;
-                            this.y = 0;
-                            this.height = 500;
-                            this.width = 820;
-                            this.playAnimation(this.GAMEOVER);
-                            document.getElementById('start-btn').classList.remove('d-none');
-                           }, 1000);
-                    }
-                } else  {
-                    this.playAnimation(this.IMAGES_WALKING);
-                }
-        }, 1000 / 10);
-
+     setInterval(() => {
+     if(this.isDead()) {
+         i++;
+         if (i < 10) {
+             this.playAnimation(this.IMAGES_DEAD);
+            setTimeout(() => {
+                document.getElementById('start-btn').classList.remove('d-none');
+            }, 3000);
+         }
+         if (i > 10) {
+             setInterval(() => {
+                this.x = 2020;
+               this.y = 0;
+                 this.height = 500;
+                 this.width = 820;
+                 this.playAnimation(this.GAMEOVER);
+                 
+                }, 1000);
+         }
+     } else  {
+         this.playAnimation(this.IMAGES_WALKING);
+     }
+    }, 1000 / 10); 
+    
+        if (i > 11) {
+            document.getElementById('start-btn').classList.remove('d-none');
+        }  
     }
 
 }
+
+// setInterval(() => {
+//     if(this.isDead()) {
+//         i++;
+//         if (i < 10) {
+//             this.playAnimation(this.IMAGES_DEAD);   
+//         }
+//         if (i > 10) {
+//             setInterval(() => {
+//                 this.x = 2020;
+//                 this.y = 0;
+//                 this.height = 500;
+//                 this.width = 820;
+//                 this.playAnimation(this.GAMEOVER);
+//                 document.getElementById('start-btn').classList.remove('d-none');
+//                }, 1000);
+//         }
+//     } else  {
+//         this.playAnimation(this.IMAGES_WALKING);
+//     }
+// }, 1000 / 10); 

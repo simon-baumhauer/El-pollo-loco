@@ -27,7 +27,6 @@
     start_btn.classList.add('d-none');
     start_screen.classList.add('d-none');
     init();
-    
 }
 
 // myMusic = new Audio("audio/background_sound.mp3");
