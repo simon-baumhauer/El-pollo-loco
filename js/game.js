@@ -12,6 +12,10 @@ function init() {
     world = new World(canvas, keyboard);
 }
 
+function fullscreen() {
+    canvas.requestFullscreen();
+}
+
 
 window.addEventListener('keydown', (event) => {
     if (event.keyCode === 39) {
