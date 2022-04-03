@@ -12,55 +12,88 @@ canvas {
     display: none;
 }
 
-button, p {
-    z-index: 1;
-    position: absolute;
+button {
     width: 200px;
     height: 30px;
-    top: 520px;
     background-color: rgb(255, 220, 3);
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
 }
+
+p {
+    padding: 10px;
+    width: 150px;
+    margin: 0;
+}
+
+button, p {
+    z-index: 1;
+    position: absolute;
+    top: 520px;
+    font-weight: bold;
+}
+
 
 
 .up_btn {
     top: 640px;
     background-color: grey;
     width: 60px;
-    left: 800px;
+    left: 870px;
+}
+
+.up-text {
+    top: 640px;
+    left: 720px;
 }
 
 .right_btn {
     top: 680px;
-    left: 800px;
+    left: 870px;
     background-color: grey;
     width: 60px;
+}
+
+.right-text {
+    top: 680px;
+    left: 720px;
 }
 
 .left_btn {
     top: 720px;
-    left: 800px;
+    left: 870px;
     background-color: grey;
     width: 60px;
+}
+
+.left-text {
+    top: 720px;
+    left: 720px;
 }
 
 .jump_btn {
     top: 760px;
-    left: 800px;
+    left: 870px;
     background-color: grey;
     width: 60px;
 }
 
-
+.jump-text {
+    top: 760px;
+    left: 720px;
+}
 
 .throw_btn {
     top: 800px;
-    left: 800px;
+    left: 870px;
     background-color: grey;
     width: 60px;
+}
+
+.throw-text {
+    top: 800px;
+    left: 720px;
 }
 
 .fullscreen_btn {
