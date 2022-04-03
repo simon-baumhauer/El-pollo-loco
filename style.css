@@ -12,7 +12,7 @@ canvas {
     display: none;
 }
 
-button {
+.button {
     width: 200px;
     height: 30px;
     background-color: rgb(255, 220, 3);
@@ -27,7 +27,7 @@ p {
     margin: 0;
 }
 
-button, p {
+.button, p {
     z-index: 1;
     position: absolute;
     top: 520px;
@@ -97,7 +97,17 @@ button, p {
 }
 
 .fullscreen_btn {
-    right: 650px;
+    position: absolute;
+    top: 513px;
+    background: transparent;
+    z-index: 1;
+    border: none;
+    left: 890px;
+}
+
+
+.fullscreen_btn img{
+    width: 50px;
 }
 
 @media only screen and (max-width: 720px) {
