@@ -32,13 +32,15 @@
         <h1>El pollo loco</h1>
 
         <div style="position: absolute;">
-            <button class="button start_btn" id="start-btn" style="z-index: 30; position: absolute; top: 520px; width: 200px; height: 30px; background-color: rgb(255, 220, 3);" onclick="initLevel(), startGame()">Start</button>
-            <p class="left-text">Arrow LEFT =</p><button class="button left_btn" onclick="">LEFT</button>
-            <p class="up-text">Arrow UP =</p><button class="button up_btn" onclick="">UP</button>
-            <p class="right-text">Arrow RIGHT =</p><button class="button right_btn" onclick="">RIGHT</button>
-            <p class="jump-text">Keyboard SPACE = </p><button class="button jump_btn" onclick="">JUMP</button>
-            <p class="throw-text">Keydboard D = </p><button class="button throw_btn" onclick="">THROW</button>
-            <div  style="position: relative;">
+            <section>
+                <button class="button start_btn" id="start-btn" style="z-index: 30; position: absolute; top: 520px; width: 200px; height: 30px; background-color: rgb(255, 220, 3);" onclick="initLevel(), startGame()">Start</button>
+                <p class="left-text">Arrow LEFT =</p><button class="button left_btn" onclick="">LEFT</button>
+                <p class="up-text">Arrow UP =</p><button class="button up_btn" onclick="">UP</button>
+                <p class="right-text">Arrow RIGHT =</p><button class="button right_btn" onclick="">RIGHT</button>
+                <p class="jump-text">Keyboard SPACE = </p><button class="button jump_btn" onclick="">JUMP</button>
+                <p class="throw-text">Keydboard D = </p><button class="button throw_btn" onclick="">THROW</button>
+            </section>
+            <div class="canvas_container"  style="position: relative;">
                 <canvas id="canvas" width="720" height="480" ></canvas>
                 <button class="fullscreen_btn" onclick="fullscreen()"><img src="img/9.Intro _ Outro Image/Start Screen/maximize-solid.svg" alt=""></button>
                 <img id="start-screen" style="max-width: 720px; height: 480px; position: absolute; left: 0;" src="img/9.Intro _ Outro Image/Start Screen/Opción 1.png" alt="">

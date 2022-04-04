@@ -100,25 +100,25 @@ p {
     position: absolute;
     top: 513px;
     background: transparent;
-
     border: none;
-    left: 0;
-    top: 420px;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
 }
 
 
 .fullscreen_btn img{
-    width: 50px;
+    width: 30px;
 }
 
 @media only screen and (max-width: 720px) {
-    canvas {
+    canvas, .canvas_container {
         width: 100%;
     }
 }
 
 @media only screen and (max-height: 480px) {
-    canvas {
+    canvas, .canvas_container {
         width: 100vh;
     }
 }
