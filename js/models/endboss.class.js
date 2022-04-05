@@ -61,7 +61,7 @@ class Endboss extends MovableObject {
      }
     }, 1000 / 10); 
     
-        if (i > 11) {
+        if (i > 10) {
             document.getElementById('start-btn').classList.remove('d-none');
         }  
     }

@@ -9,7 +9,7 @@ class TrowableObeject extends MovableObject{
         'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 12.png'
     ];
 
-    // I need a instace that checks the collison
+    
 
     constructor(x, y) {
         super().loadImage('img/6.botella/Rotación/Mesa de trabajo 1 copia 3.png');
@@ -34,10 +34,9 @@ class TrowableObeject extends MovableObject{
     }
 
     bottleAnimations() {
-        setTimeout(() => {
+        setInterval(() => {
             this.playAnimation(this.SPLASH_SAUCE);
-        }, 700);
-            
+        }, 700);   
     }
 
 

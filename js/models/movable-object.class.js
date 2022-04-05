@@ -24,6 +24,10 @@ class MovableObject extends DrawableObject{
             }
         }
 
+        isOnGround() {
+            return this.y > 18 0;
+        }
+
     isColliding(mo) {
         return this.x + this.width > mo.x &&
         this.y +  this.height > mo.y &&
