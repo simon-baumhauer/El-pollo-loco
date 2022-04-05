@@ -24,8 +24,9 @@ class MovableObject extends DrawableObject{
             }
         }
 
+        
         isOnGround() {
-            return this.y > 18 0;
+            return this.y > 190;
         }
 
     isColliding(mo) {
