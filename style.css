@@ -34,8 +34,6 @@ p {
     font-weight: bold;
 }
 
-
-
 .up_btn {
     top: 640px;
     background-color: grey;
@@ -120,5 +118,11 @@ p {
 @media only screen and (max-height: 480px) {
     canvas, .canvas_container {
         width: 100vh;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas, .canvas_container {
+        
     }
 }

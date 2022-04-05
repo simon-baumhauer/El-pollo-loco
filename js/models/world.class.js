@@ -10,6 +10,7 @@ class World {
     bottlesBar = new BottlesBar();
     throwableObjects = [];
     endboss = level_1.enemies.find( e => e instanceof Endboss) ;
+    bottleIsBroken = 100;
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -52,6 +53,7 @@ class World {
                  this.character.chargeBottle(bottle);
                  this.bottlesBar.setPercentage(this.character.bottles);
                  this.level.bottles.splice(index, 1);
+                
             }
         });
         this.level.coins.forEach( (coins, index) => {
