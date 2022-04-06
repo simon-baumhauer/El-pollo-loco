@@ -8,6 +8,7 @@ class World {
     statusBar = new StatusBar();
     coinsBar = new CoinsBar();
     bottlesBar = new BottlesBar();
+    lostScreen = new LostScreen();
     throwableObjects = [];
     endboss = level_1.enemies.find( e => e instanceof Endboss) ;
 
@@ -83,9 +84,11 @@ class World {
          this.addToMap(this.statusBar);
          this.addToMap(this.coinsBar);
          this.addToMap(this.bottlesBar);
+         if (this.character.isDead()) {
+            this.addToMap(this.lostScreen);  
+         }
          this.ctx.translate(this.camera_x, 0);
       
-
          this.addToMap(this.character);
          this.addObjectToMap(this.level.coins);
          this.addObjectToMap(this.level.bottles);

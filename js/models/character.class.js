@@ -58,13 +58,9 @@ class Character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-correccion/1.IDLE/IDLE/I-10.png'
     ];
 
-    LOST_SCREEN = [
-        'img/9.Intro _ Outro Image/_Game over_ screen/1.you lost.png'
-    ];
 
     constructor() {
         super().loadImage('img/2.Secuencias_Personaje-Pepe-correccion/2.Secuencia_caminata/W-21.png');
-        this.loadImages(this.LOST_SCREEN);
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_DEAD);
@@ -74,19 +70,8 @@ class Character extends MovableObject {
         this.animate();
     }
 
-    gameLost() {
-        setInterval(() => {
-            this.world.camera_x = 0;
-            this.x = 0;
-            this.y = 0;
-            this.height = 500;
-            this.width = 820;
-            this.playAnimation(this.LOST_SCREEN); 
-        }, 10);
-    }
 
     animate() {
-        let i = 0;
         setInterval(() => {
             this.walking_sound.pause();
             if (this.world.keyboard.LEFT && this.x > 0) {
@@ -108,11 +93,8 @@ class Character extends MovableObject {
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
         setInterval(() => {
-            if(this.isDead() && i <= 30) {
-                i++;
+            if(this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
-            } else if ( i >= 30) {
-                this.gameLost();
             } else if (this.isHurt()) {
                 this.playAnimation(this.IMAGES_HURT);
             }

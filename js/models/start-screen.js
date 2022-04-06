@@ -1,10 +1,7 @@
  class GAMEOVERSCREEN extends MovableObject {
 
-        GAMEOVER = [
-            'img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png'
-        ]
-    
-    
+        
+
   
     constructor() {
         super().loadImage(this.GAMEOVER[0]);
@@ -14,10 +11,8 @@
         this.height = 480;
         this.animate();
     }
-
     animate() {
         this.playAnimation(this.GAMEOVER);
-        console.log(isDead);
     }
 
 }
