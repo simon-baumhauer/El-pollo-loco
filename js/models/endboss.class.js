@@ -48,8 +48,8 @@ class Endboss extends MovableObject {
          }
          if (i > 10) {
              setInterval(() => {
-                this.x = 2020;
-                this.y = 0;
+                 this.x = 2020;
+                 this.y = 0;
                  this.height = 500;
                  this.width = 820;
                  this.playAnimation(this.GAMEOVER);

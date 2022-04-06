@@ -17,6 +17,7 @@
 
     animate() {
         this.playAnimation(this.GAMEOVER);
+        console.log(isDead);
     }
 
 }
