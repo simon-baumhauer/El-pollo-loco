@@ -84,9 +84,6 @@ class World {
          this.addToMap(this.statusBar);
          this.addToMap(this.coinsBar);
          this.addToMap(this.bottlesBar);
-         if (this.character.isDead()) {
-            this.addToMap(this.lostScreen);  
-         }
          this.ctx.translate(this.camera_x, 0);
       
          this.addToMap(this.character);
@@ -97,6 +94,12 @@ class World {
            if (this.endboss.energy === 0) {
              this.keyboard = false;
               }
+             else if (this.character.isDead()) {
+                this.keyboard = false;
+                this.ctx.translate(-this.camera_x, 0);
+                this.addToMap(this.lostScreen);
+                this.ctx.translate(this.camera_x, 0);
+             }
          this.ctx.translate(-this.camera_x, 0);
          let self = this;
          requestAnimationFrame(function() {
@@ -133,4 +136,11 @@ class World {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
+
+    // lostScreen() {
+    //     this.keyboard = false;
+    //     return
+    //     this.addToMap(this.lostScreen);  
+        
+    // }
 }
