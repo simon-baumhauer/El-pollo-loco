@@ -19,7 +19,6 @@ class TrowableObeject extends MovableObject{
         this.height = 100;
         this.width = 100;
             this.throw();
-            this. bottleAnimations();
     }
 
     
@@ -33,11 +32,11 @@ class TrowableObeject extends MovableObject{
         
     }
 
-    bottleAnimations() {
-        setInterval(() => {
-            this.playAnimation(this.SPLASH_SAUCE);
-        }, 700);   
-    }
+    // bottleAnimations() {
+    //     setInterval(() => {
+    //         this.playAnimation(this.SPLASH_SAUCE);
+    //     }, 700);   
+    // }
 
 
 }
