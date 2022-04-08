@@ -6,6 +6,7 @@ class World {
     keyboard;
     camera_x = -100;
     lost_sound = new Audio('audio/113988_311243-lq.mp3');
+    collect_sound = new Audio('audio/135936_2487914-lq.mp3');
     statusBar = new StatusBar();
     coinsBar = new CoinsBar();
     bottlesBar = new BottlesBar();
@@ -57,6 +58,7 @@ class World {
                  this.character.chargeBottle(bottle);
                  this.bottlesBar.setPercentage(this.character.bottles);
                     this.level.bottles.splice(index, 1);
+                    this.collect_sound.play();
                          
             }
         });

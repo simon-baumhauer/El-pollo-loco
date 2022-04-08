@@ -10,11 +10,4 @@ class LostScreen extends DrawableObject{
     super().loadImage('img/9.Intro _ Outro Image/_Game over_ screen/1.you lost.png');
     }
 
-    // lostSound() {
-    //     if(lost) {
-    //         console.log(this.lost);
-    //         // this.lost_sound.play();
-    //     }
-    // }
-
 }

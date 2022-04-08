@@ -2,11 +2,12 @@ class Character extends MovableObject {
     world;
     y = 0;
     speed = 10;
-    walking_sound = new Audio('audio/cartoon_footsteps_walking_fast_jogging.mp3');
-    hurt_sound = new Audio('audio/44428_468340-lq.mp3');
     bottles = 0;
     coins = 0;
     lost = false;
+
+    walking_sound = new Audio('audio/cartoon_footsteps_walking_fast_jogging.mp3');
+    hurt_sound = new Audio('audio/44428_468340-lq.mp3');
     
     
    

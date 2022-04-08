@@ -26,4 +26,4 @@
 }
 
 // myMusic = new Audio("audio/background_sound.mp3");
-// myMusic.stop();
+// myMusic.play();
