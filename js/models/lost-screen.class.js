@@ -8,8 +8,7 @@ class LostScreen extends DrawableObject{
 
     constructor() {
     super().loadImage('img/9.Intro _ Outro Image/_Game over_ screen/1.you lost.png');
+
     }
-
-
 
 }

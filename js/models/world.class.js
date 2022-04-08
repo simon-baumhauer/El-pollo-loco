@@ -5,13 +5,16 @@ class World {
     canvas;
     keyboard;
     camera_x = -100;
-    lost_sound = new Audio('audio/113988_311243-lq.mp3')
+    lost_sound = new Audio('audio/113988_311243-lq.mp3');
     statusBar = new StatusBar();
     coinsBar = new CoinsBar();
     bottlesBar = new BottlesBar();
     lostScreen = new LostScreen();
     throwableObjects = [];
     endboss = level_1.enemies.find( e => e instanceof Endboss) ;
+    lost = false;
+
+
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -100,8 +103,8 @@ class World {
                 this.ctx.translate(-this.camera_x, 0);
                 this.addToMap(this.lostScreen);
                 this.ctx.translate(this.camera_x, 0);
-                this.lost_sound.play();
              }
+             
          this.ctx.translate(-this.camera_x, 0);
          let self = this;
          requestAnimationFrame(function() {
@@ -139,10 +142,9 @@ class World {
         this.ctx.restore();
     }
 
-    // lostScreen() {
-    //     this.keyboard = false;
-    //     return
-    //     this.addToMap(this.lostScreen);  
-        
-    // }
+    lostSound() {
+        if(this.character.isDead()) {
+            
+        }
+    }
 }

@@ -89,13 +89,12 @@ class Character extends MovableObject {
             if (this.world.keyboard.SPACE && !this.isAboveGround()) {
                     this.speedY = 30;
             }
-    
-            
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
         setInterval(() => {
             if(this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
+                this.lost_sound.play();
                 this.walking_sound.pause();
             } else if (this.isHurt()) {
                 this.playAnimation(this.IMAGES_HURT);
