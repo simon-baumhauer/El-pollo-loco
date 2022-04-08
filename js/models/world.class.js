@@ -12,7 +12,7 @@ class World {
     lostScreen = new LostScreen();
     throwableObjects = [];
     endboss = level_1.enemies.find( e => e instanceof Endboss) ;
-    lost = false;
+
 
 
 
@@ -103,6 +103,8 @@ class World {
                 this.ctx.translate(-this.camera_x, 0);
                 this.addToMap(this.lostScreen);
                 this.ctx.translate(this.camera_x, 0);
+                let start_btn = document.getElementById('start-btn');
+                start_btn.classList.remove('d-none');
              }
              
          this.ctx.translate(-this.camera_x, 0);
@@ -140,11 +142,5 @@ class World {
     flipImageBack(mo) {
         mo.x = mo.x * -1;
         this.ctx.restore();
-    }
-
-    lostSound() {
-        if(this.character.isDead()) {
-            
-        }
     }
 }

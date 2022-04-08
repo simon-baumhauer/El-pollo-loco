@@ -6,6 +6,7 @@ class Character extends MovableObject {
     hurt_sound = new Audio('audio/44428_468340-lq.mp3');
     bottles = 0;
     coins = 0;
+    lost = false;
     
     
    
@@ -94,7 +95,6 @@ class Character extends MovableObject {
         setInterval(() => {
             if(this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
-                this.lost_sound.play();
                 this.walking_sound.pause();
             } else if (this.isHurt()) {
                 this.playAnimation(this.IMAGES_HURT);
@@ -112,4 +112,5 @@ class Character extends MovableObject {
             }
             }, 500);
         }
+
     }
