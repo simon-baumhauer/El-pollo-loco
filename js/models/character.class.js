@@ -9,6 +9,8 @@ class Character extends MovableObject {
     walking_sound = new Audio('audio/cartoon_footsteps_walking_fast_jogging.mp3');
     hurt_sound = new Audio('audio/44428_468340-lq.mp3');
     myMusic = new Audio("audio/background_sound.mp3");  
+   
+
     
     
     
@@ -78,6 +80,7 @@ class Character extends MovableObject {
 
     animate() {
         this.myMusic.play();
+        this. myMusic.volume = 0.5;
         setInterval(() => {
             this.walking_sound.pause();
             if (this.world.keyboard.LEFT && this.x > 0) {
