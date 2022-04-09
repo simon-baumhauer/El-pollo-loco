@@ -1,18 +1,14 @@
- class GAMEOVERSCREEN extends MovableObject {
+ class StartScreen extends MovableObject {
 
-        
+      
 
   
     constructor() {
-        super().loadImage(this.GAMEOVER[0]);
         this.x = 0;
         this.y = 0;
         this.width = 720;
         this.height = 480;
-        this.animate();
-    }
-    animate() {
-        this.playAnimation(this.GAMEOVER);
+
     }
 
 }
@@ -25,5 +21,4 @@
     init();
 }
 
-// myMusic = new Audio("audio/background_sound.mp3");
-// myMusic.play();
+ 

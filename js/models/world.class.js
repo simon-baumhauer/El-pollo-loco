@@ -7,6 +7,8 @@ class World {
     camera_x = -100;
     lost_sound = new Audio('audio/113988_311243-lq.mp3');
     collect_sound = new Audio('audio/135936_2487914-lq.mp3');
+    hit_sound = new Audio('audio/523769_6142149-lq.mp3');
+    chicken_sound = new Audio('audio/316920_4921277-lq.mp3');
     statusBar = new StatusBar();
     coinsBar = new CoinsBar();
     bottlesBar = new BottlesBar();
