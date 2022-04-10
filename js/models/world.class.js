@@ -116,6 +116,7 @@ class World {
          this.addObjectToMap(this.throwableObjects);
            if (this.endboss.energy === 0) {
              this.keyboard = false;
+             this.character.myMusic.pause();
               }
              else if (this.character.isDead()) {
             this.lostAnimations();
