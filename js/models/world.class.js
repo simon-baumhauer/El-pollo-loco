@@ -49,12 +49,22 @@ class World {
      }
 
      checkColisons() {
+        this.character_enemy();
+        this.character_bottle();
+        this.character_coins();
+        this.bottle_endboss();
+    
+     }
+     character_enemy() {
         this.level.enemies.forEach( (enemy) => {
             if (this.character.isColliding(enemy)) {
                  this.character.hit(5);
                  this.statusBar.setPercentage(this.character.energy);
             }
         });
+     }
+
+     character_bottle() {
         this.level.bottles.forEach( (bottle, index) => {
             if (this.character.isColliding(bottle)) {
                  this.character.chargeBottle(bottle);
@@ -64,6 +74,9 @@ class World {
                          
             }
         });
+     }
+
+     character_coins() {
         this.level.coins.forEach( (coins, index) => {
             if (this.character.isColliding(coins)) {
                  this.character.chargeCoins();
@@ -71,6 +84,9 @@ class World {
                  this.level.coins.splice(index, 1);
             }
         });
+     }
+
+     bottle_endboss() {
         this.throwableObjects.forEach( (bottle, index) => {
             if (this.endboss.isColliding(bottle)) {
                 this.throwableObjects.splice(index, 1);
@@ -78,8 +94,7 @@ class World {
             }
         });
      }
-
-   
+  
 
      draw() {
          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -103,14 +118,8 @@ class World {
              this.keyboard = false;
               }
              else if (this.character.isDead()) {
-                this.keyboard = false;
-                this.ctx.translate(-this.camera_x, 0);
-                this.addToMap(this.lostScreen);
-                this.ctx.translate(this.camera_x, 0);
-                let start_btn = document.getElementById('start-btn');
-                start_btn.classList.remove('d-none');
-             }
-             
+            this.lostAnimations();
+             }  
          this.ctx.translate(-this.camera_x, 0);
          let self = this;
          requestAnimationFrame(function() {
@@ -146,5 +155,14 @@ class World {
     flipImageBack(mo) {
         mo.x = mo.x * -1;
         this.ctx.restore();
+    }
+
+    lostAnimations() {
+        this.keyboard = false;
+        this.ctx.translate(-this.camera_x, 0);
+        this.addToMap(this.lostScreen);
+        this.ctx.translate(this.camera_x, 0);
+        let start_btn = document.getElementById('start-btn');
+        start_btn.classList.remove('d-none');
     }
 }
