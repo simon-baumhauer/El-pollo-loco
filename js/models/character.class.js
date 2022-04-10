@@ -7,6 +7,7 @@ class Character extends MovableObject {
     lost = false;
 
     walking_sound = new Audio('audio/cartoon_footsteps_walking_fast_jogging.mp3');
+   
     hurt_sound = new Audio('audio/44428_468340-lq.mp3');
     myMusic = new Audio("audio/background_sound.mp3");  
    
@@ -80,7 +81,7 @@ class Character extends MovableObject {
 
     animate() {
         this.myMusic.play();
-        this. myMusic.volume = 0.5;
+        this.myMusic.volume = 0.1;
         setInterval(() => {
             this.walking_sound.pause();
             if (this.world.keyboard.LEFT && this.x > 0) {
@@ -103,11 +104,13 @@ class Character extends MovableObject {
             if(this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
                 this.walking_sound.pause();
+                this.walking_sound.volume = 0.1;
                 this.myMusic.pause();
                 this.hurt_sound.pause();
             } else if (this.isHurt()) {
                 this.playAnimation(this.IMAGES_HURT);
                 this.hurt_sound.play();
+                this.hurt_sound.volume = 0.1;
             }
              else if (this.isAboveGround()) {
                     this.playAnimation(this.IMAGES_JUMPING);
