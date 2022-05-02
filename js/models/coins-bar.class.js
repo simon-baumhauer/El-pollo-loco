@@ -20,16 +20,30 @@ class CoinsBar extends DrawableObject {
     this.height = 60;
   }
 
+  /**
+   * This function deletes the coin on the canvas
+   */
   delete() {
     this.ctx.clearRect(this.x, this.y, this.width, this.height);
   }
 
+
+  /**
+   * This Function sets the coinsbar after the the amount fo coins left or picked up 
+   * 
+   * @param {variable} percentage This varilable shows how much of the bar should be displayed in the coinsbar
+   */
   setPercentage(percentage) {
     this.percentage = percentage;
     let path = this.IMAGES[this.resolveImageIndex()];
     this.img = this.imageCache[path];
   }
 
+  /**
+   * This funtion sets the perctenage to the amount of bottles
+   * 
+   * @returns the number tha will be displayed in the bar in terms of length
+   */
   resolveImageIndex() {
     if (this.percentage >= 100) {
       return 5;

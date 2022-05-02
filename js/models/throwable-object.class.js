@@ -18,6 +18,9 @@ class TrowableObeject extends MovableObject {
     this.throw();
   }
 
+  /**
+   * This function animates the the throw of a bottle
+   */
   throw() {
     this.speedY = 30;
     this.applyGravity();
@@ -25,10 +28,4 @@ class TrowableObeject extends MovableObject {
       this.x += 10;
     }, 25);
   }
-
-  // bottleAnimations() {
-  //     setInterval(() => {
-  //         this.playAnimation(this.SPLASH_SAUCE);
-  //     }, 700);
-  // }
 }

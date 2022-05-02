@@ -25,10 +25,16 @@ class World {
     this.run();
   }
 
+  /**
+   * this function set the world object as the same as the world object in the character object
+   */
   setWorld() {
     this.character.world = this;
   }
 
+  /**
+   * This function checks continously collsions between objects
+   */
   run() {
     setInterval(() => {
       this.checkColisons();
@@ -36,6 +42,9 @@ class World {
     }, 200);
   }
 
+  /**
+   * This function get invokes under certaint conditons and create a new bottle object and removes one of the bottlebar
+   */
   checkThrowObjects() {
     if (this.keyboard.D && this.character.bottles > 0) {
       let bottle = new TrowableObeject(this.character.x, this.character.y);
@@ -45,12 +54,18 @@ class World {
     }
   }
 
+  /**
+   * This function checks collsion between certain objects
+   */
   checkColisons() {
     this.character_enemy();
     this.character_bottle();
     this.character_coins();
     this.bottle_endboss();
   }
+  /**
+   * This fucntion checks collsions between the enemys objects and the character obejct
+   */
   character_enemy() {
     this.level.enemies.forEach((enemy) => {
       if (this.character.isColliding(enemy)) {
@@ -60,6 +75,9 @@ class World {
     });
   }
 
+  /**
+   * This function checks collisons between character and bottle objects
+   */
   character_bottle() {
     this.level.bottles.forEach((bottle, index) => {
       if (this.character.isColliding(bottle)) {
@@ -71,6 +89,10 @@ class World {
     });
   }
 
+  /**
+   * 
+   * This function checks collsions between character between and coins
+   */
   character_coins() {
     this.level.coins.forEach((coins, index) => {
       if (this.character.isColliding(coins)) {
@@ -81,6 +103,9 @@ class World {
     });
   }
 
+  /**
+   * This function checks collsions between bottle objects and the endboss object
+   */
   bottle_endboss() {
     this.throwableObjects.forEach((bottle, index) => {
       if (this.endboss.isColliding(bottle)) {
@@ -90,6 +115,9 @@ class World {
     });
   }
 
+  /**
+   * This function draws all the object on the canvas
+   */
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.translate(this.camera_x, 0);
@@ -121,12 +149,22 @@ class World {
     });
   }
 
+  /**
+   * This fucntion adds object to the canvas
+   * 
+   * @param {variable} objects This variable stands for objects
+   */
   addObjectToMap(objects) {
     objects.forEach((o) => {
       this.addToMap(o);
     });
   }
 
+  /**
+   * This function add movableObjects to the canvas
+   * 
+   * @param {variable} mo this variable stands for movalbe object
+   */
   addToMap(mo) {
     if (mo.otherDirection) {
       this.flipImage(mo);
@@ -138,6 +176,11 @@ class World {
     }
   }
 
+  /**
+   * This function turn the Images(object) if one direction
+   * 
+   * @param {varialbe} mo This variable stands for movableObjects
+   */
   flipImage(mo) {
     this.ctx.save();
     this.ctx.translate(mo.width, 0);
@@ -145,11 +188,19 @@ class World {
     mo.x = mo.x * -1;
   }
 
+  /**
+   * This image remes the conditons set of the flipImage function
+   * 
+   * @param {variable} mo This variable stands for movableObjects
+   */
   flipImageBack(mo) {
     mo.x = mo.x * -1;
     this.ctx.restore();
   }
 
+  /**
+   * This function disables the keyboad and displays a Screeen that shows the gamer tha the game is lost
+   */
   lostAnimations() {
     this.keyboard = false;
     this.ctx.translate(-this.camera_x, 0);

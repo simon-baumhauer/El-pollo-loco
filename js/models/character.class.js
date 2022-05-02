@@ -73,6 +73,9 @@ class Character extends MovableObject {
     this.animate();
   }
 
+  /**
+   * This function has several build in animations of the character and conditions that invoke other animations
+   */
   animate() {
     this.myMusic.play();
     this.myMusic.volume = 0.1;
@@ -112,8 +115,9 @@ class Character extends MovableObject {
     }, 500);
   }
 
-  // Character animations----------
-
+  /**
+   * This function animates the character to be dead
+   */
   deadAnimaton() {
     this.playAnimation(this.IMAGES_DEAD);
     this.walking_sound.pause();
@@ -122,20 +126,32 @@ class Character extends MovableObject {
     this.hurt_sound.pause();
   }
 
+  /**
+   * This functions animates the character to be hurt
+   */
   hurtAnimation() {
     this.playAnimation(this.IMAGES_HURT);
     this.hurt_sound.play();
     this.hurt_sound.volume = 0.1;
   }
 
+  /**
+   * This functions animates the character to jump
+   */
   jumpAnimation() {
     this.playAnimation(this.IMAGES_JUMPING);
   }
 
+  /**
+   * This functions animates the character while walking
+   */
   walkingAnimation() {
     this.playAnimation(this.IMAGES_WALKING);
   }
 
+  /**
+   * This character animates the character while standing
+   */
   standingAnimation() {
     this.playAnimation(this.IMAGES_STADING);
   }

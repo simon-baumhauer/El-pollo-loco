@@ -20,12 +20,24 @@ class BottlesBar extends MovableObject {
     this.height = 60;
   }
 
+
+/**
+ * This Function sets the bottlebar after the the amount fo bottle left or picked up 
+ * 
+ * @param {variable} percentage This varilable shows how much of the bar should be displayed in the bottlebar
+ */
   setPercentage(percentage) {
     this.percentage = percentage;
     let path = this.IMAGES[this.resolveImageIndex()];
     this.img = this.imageCache[path];
   }
 
+
+/**
+ * This funtion sets the perctenage to the amount of bottles
+ * 
+ * @returns the number tha will be displayed in the bar in terms of length
+ */
   resolveImageIndex() {
     if (this.percentage >= 100) {
       return 5;

@@ -1,5 +1,9 @@
 let level_1;
 
+/**
+ * This function inserts all objects that are needed for one level of the game
+ */
+
 function initLevel() {
   level_1 = new Level(
     [new Chicken(), new Chicken(), new Chicken(), new Endboss()],

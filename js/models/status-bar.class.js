@@ -20,12 +20,25 @@ class StatusBar extends DrawableObject {
     this.height = 60;
   }
 
+  
+  /**
+   * This Function sets the energybar after the the amount fo energy the character has
+   * 
+   * @param {variable} percentage This varilable shows how much of the lifebar should be displayed 
+   */
   setPercentage(percentage) {
     this.percentage = percentage;
     let path = this.IMAGES[this.resolveImageIndex()];
     this.img = this.imageCache[path];
   }
 
+  
+
+  /**
+   * This funtion sets the perctenage of left energy
+   * 
+   * @returns the number tha will be displayed in the bar in terms of length
+   */
   resolveImageIndex() {
     if (this.percentage == 100) {
       return 5;

@@ -31,6 +31,9 @@ class Endboss extends MovableObject {
     this.animate();
   }
 
+  /**
+   * This function animates the character in certain conditions
+   */
   animate() {
     let i = 0;
     setInterval(() => {
@@ -61,24 +64,3 @@ class Endboss extends MovableObject {
     }
   }
 }
-
-// setInterval(() => {
-//     if(this.isDead()) {
-//         i++;
-//         if (i < 10) {
-//             this.playAnimation(this.IMAGES_DEAD);
-//         }
-//         if (i > 10) {
-//             setInterval(() => {
-//                 this.x = 2020;
-//                 this.y = 0;
-//                 this.height = 500;
-//                 this.width = 820;
-//                 this.playAnimation(this.GAMEOVER);
-//                 document.getElementById('start-btn').classList.remove('d-none');
-//                }, 1000);
-//         }
-//     } else  {
-//         this.playAnimation(this.IMAGES_WALKING);
-//     }
-// }, 1000 / 10);

@@ -18,6 +18,9 @@ class Chicken extends MovableObject {
     this.animate();
   }
 
+  /**
+   * This function animates the Chicken character to while walking left and to walk left
+   */
   animate() {
     setInterval(() => {
       this.moveLeft();

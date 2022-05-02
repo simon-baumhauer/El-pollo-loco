@@ -12,6 +12,9 @@ function init() {
   world = new World(canvas, keyboard);
 }
 
+/**
+ * This function extends the screen fullsize of the screen
+ */
 function fullscreen() {
   canvas.requestFullscreen();
 }
