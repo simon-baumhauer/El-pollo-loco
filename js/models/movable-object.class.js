@@ -1,87 +1,86 @@
-class MovableObject extends DrawableObject{
-    speed = 0.15;
-    otherDirection = false;
-    speedY = 0;
-    acceleration = 2.5;
-    energy = 100;
-    lastHit = 0;
-    gameover = 0; 
+class MovableObject extends DrawableObject {
+  speed = 0.15;
+  otherDirection = false;
+  speedY = 0;
+  acceleration = 2.5;
+  energy = 100;
+  lastHit = 0;
+  gameover = 0;
 
-  
-
-    applyGravity(){
-            setInterval(() => {
-                if(this.isAboveGround() || this.speedY > 0){
-                this.y -= this.speedY;
-                this.speedY -= this.acceleration;
-            }
-            }, 1000 / 25);
-        }
-
-        isAboveGround() {
-            if(this instanceof TrowableObeject) { // throwableobjects should always fall
-                return true;
-            } else {
-                return this.y < 180;
-            }
-        }
-
-        
-        isOnGround() {
-            return this.y > 190;
-        }
-
-    isColliding(mo) {
-        return this.x + this.width > mo.x &&
-        this.y +  this.height > mo.y &&
-        this.x < mo.x &&
-        this.y < mo.y + mo.height
-    }
-
-    hit(number) {
-      this.energy -= number;
-        if (this.energy < 0) {
-            this.energy = 0;
-        } else {
-            this.lastHit = new Date().getTime();
-        }
-    }
-
-    chargeCoins() {
-        this.coins += 20;
+  applyGravity() {
+    setInterval(() => {
+      if (this.isAboveGround() || this.speedY > 0) {
+        this.y -= this.speedY;
+        this.speedY -= this.acceleration;
       }
+    }, 1000 / 25);
+  }
 
-    chargeBottle() {
-        this.bottles += 20;
-      }
-
-    isHurt() {
-        let timepassed = new Date().getTime() - this.lastHit;
-        timepassed = timepassed / 1000;
-        return timepassed < 1;
+  isAboveGround() {
+    if (this instanceof TrowableObeject) {
+      // throwableobjects should always fall
+      return true;
+    } else {
+      return this.y < 180;
     }
+  }
 
-     isDead() {
-         return this.energy == 0;
-     }
+  isOnGround() {
+    return this.y > 190;
+  }
 
-    playAnimation(images) {
-        let i = this.currentImage % images.length;
-        let path = images[i];
-        this.img = this.imageCache[path];
-        this.currentImage++;
+  isColliding(mo) {
+    return (
+      this.x + this.width > mo.x &&
+      this.y + this.height > mo.y &&
+      this.x < mo.x &&
+      this.y < mo.y + mo.height
+    );
+  }
+
+  hit(number) {
+    this.energy -= number;
+    if (this.energy < 0) {
+      this.energy = 0;
+    } else {
+      this.lastHit = new Date().getTime();
     }
+  }
 
-    moveRight() {
-        this.x += this.speed;
-    }
+  chargeCoins() {
+    this.coins += 20;
+  }
 
-    moveLeft() {
-        this.x -= this.speed;
-    }
+  chargeBottle() {
+    this.bottles += 20;
+  }
 
-    jump() {
-        return this.speedY = 30;
-    }
+  isHurt() {
+    let timepassed = new Date().getTime() - this.lastHit;
+    timepassed = timepassed / 1000;
+    return timepassed < 1;
+  }
 
+  isDead() {
+    return this.energy == 0;
+  }
+
+  playAnimation(images) {
+    let i = this.currentImage % images.length;
+    let path = images[i];
+    this.img = this.imageCache[path];
+    this.currentImage++;
+  }
+
+  moveRight() {
+    this.x += this.speed;
+  }
+
+  moveLeft() {
+    this.x -= this.speed;
+  }
+
+  jump() {
+    return (this.speedY = 30);
+  }
 }
