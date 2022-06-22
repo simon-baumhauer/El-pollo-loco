@@ -9,6 +9,7 @@ class World {
   collect_sound = new Audio("audio/135936_2487914-lq.mp3");
   hit_sound = new Audio("audio/523769_6142149-lq.mp3");
   chicken_sound = new Audio("audio/316920_4921277-lq.mp3");
+  chicken_hit = new Audio("audio/audio_chicken_hit.mp3");
   statusBar = new StatusBar();
   coinsBar = new CoinsBar();
   bottlesBar = new BottlesBar();
@@ -90,7 +91,7 @@ class World {
   }
 
   /**
-   * 
+   *
    * This function checks collsions between character between and coins
    */
   character_coins() {
@@ -111,6 +112,7 @@ class World {
       if (this.endboss.isColliding(bottle)) {
         this.throwableObjects.splice(index, 1);
         this.endboss.hit(20);
+        this.chicken_hit.play();
       }
     });
   }
@@ -151,7 +153,7 @@ class World {
 
   /**
    * This fucntion adds object to the canvas
-   * 
+   *
    * @param {variable} objects This variable stands for objects
    */
   addObjectToMap(objects) {
@@ -162,7 +164,7 @@ class World {
 
   /**
    * This function add movableObjects to the canvas
-   * 
+   *
    * @param {variable} mo this variable stands for movalbe object
    */
   addToMap(mo) {
@@ -178,7 +180,7 @@ class World {
 
   /**
    * This function turn the Images(object) if one direction
-   * 
+   *
    * @param {varialbe} mo This variable stands for movableObjects
    */
   flipImage(mo) {
@@ -190,7 +192,7 @@ class World {
 
   /**
    * This image remes the conditons set of the flipImage function
-   * 
+   *
    * @param {variable} mo This variable stands for movableObjects
    */
   flipImageBack(mo) {
