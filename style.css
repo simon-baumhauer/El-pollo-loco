@@ -1,8 +1,14 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-height: 100vh;
+  margin: 0px;
 }
 
 canvas {
@@ -116,17 +122,11 @@ p {
   .canvas_container {
     width: 100%;
   }
-}
 
-@media only screen and (max-height: 480px) {
-  canvas,
-  .canvas_container {
-    width: 100vh;
-  }
-}
-
-@media only screen and (max-height: 480px) {
-  canvas,
-  .canvas_container {
+  @media only screen and (max-height: 480px) {
+    canvas,
+    .canvas_container {
+      width: 100vh;
+    }
   }
 }
