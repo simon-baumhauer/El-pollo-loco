@@ -29,58 +29,47 @@
   </head>
 
   <body onload="initLevel(), init()">
-    <h1>El pollo loco</h1>
-
-    <div style="position: absolute">
-      <section>
-        <button
-          class="button start_btn"
-          id="start-btn"
-          style="
-            z-index: 30;
-            position: absolute;
-            top: 520px;
-            width: 200px;
-            height: 30px;
-            background-color: rgb(255, 220, 3);
-          "
-          onclick="initLevel(), startGame()"
-        >
-          Start
-        </button>
-        <div>
-          <p class="left-text">Arrow LEFT =</p>
-          <button class="button left_btn" onclick="">LEFT</button>
-
-          <p class="right-text">Arrow RIGHT =</p>
-          <button class="button right_btn" onclick="">RIGHT</button>
-          <p class="jump-text">Keyboard SPACE =</p>
-          <button class="button jump_btn" onclick="">JUMP</button>
-          <p class="throw-text">Keydboard D =</p>
-          <button class="button throw_btn" onclick="">THROW</button>
-        </div>
-      </section>
-      <div class="canvas_container" style="position: relative">
-        <canvas id="canvas" width="720" height="480"></canvas>
-        <button class="fullscreen_btn" onclick="fullscreen()">
-          <img
-            src="img/9.Intro _ Outro Image/Start Screen/maximize-icon.svg"
-            alt=""
-          />
-        </button>
-        <img
-          id="start-screen"
-          style="
-            max-width: 720px;
-            height: 480px;
-            position: absolute;
-            left: 0;
-            top: 0;
-          "
-          src="img/9.Intro _ Outro Image/Start Screen/Opción 1.png"
-          alt=""
-        />
-      </div>
+    <button
+      class="button start_btn"
+      id="start-btn"
+      style="
+        z-index: 30;
+        position: absolute;
+        top: 520px;
+        width: 200px;
+        height: 30px;
+        background-color: rgb(255, 220, 3);
+      "
+      onclick="initLevel(), startGame()"
+    >
+      Start
+    </button>
+    <div>
+      <p class="left-text button-descrition">Arrow LEFT =</p>
+      <button class="button left_btn" onclick="">LEFT</button>
+      <p class="right-text button-descrition">Arrow RIGHT =</p>
+      <button class="button right_btn" onclick="">RIGHT</button>
+      <p class="jump-text button-descrition">Keyboard SPACE =</p>
+      <button class="button jump_btn" onclick="">JUMP</button>
+      <p class="throw-text button-descrition">Keydboard D =</p>
+      <button class="button throw_btn button-descrition" onclick="">
+        THROW
+      </button>
     </div>
+
+    <canvas id="canvas" width="720" height="480"></canvas>
+    <button class="fullscreen_btn" onclick="fullscreen()">
+      <img
+        src="img/9.Intro _ Outro Image/Start Screen/maximize-icon.svg"
+        alt=""
+      />
+    </button>
+    <img
+      class="start-screen"
+      id="start-screen"
+      style="max-width: 720px; height: 480px; position: absolute; top: 0"
+      src="img/9.Intro _ Outro Image/Start Screen/Opción 1.png"
+      alt=""
+    />
   </body>
 </html>

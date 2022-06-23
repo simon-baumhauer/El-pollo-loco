@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   max-height: 100vh;
-  margin: 0px;
+  margin: 0;
 }
 
 canvas {
@@ -119,14 +119,22 @@ p {
 
 @media only screen and (max-width: 720px) {
   canvas,
+  .start-screen,
   .canvas_container {
     width: 100%;
   }
+  .button {
+    display: none;
+  }
+  .button-descrition {
+    display: none;
+  }
+}
 
-  @media only screen and (max-height: 480px) {
-    canvas,
-    .canvas_container {
-      width: 100vh;
-    }
+@media only screen and (max-height: 480px) {
+  canvas,
+  .start-screen,
+  .canvas_container {
+    height: 100vh;
   }
 }
