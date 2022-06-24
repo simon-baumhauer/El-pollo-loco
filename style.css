@@ -98,10 +98,6 @@ p {
   .btn-descripton-box {
     display: none;
   }
-
-  .start_btn {
-    top: 300px;
-  }
 }
 
 @media only screen and (max-height: 480px) {
