@@ -77,6 +77,9 @@ p {
   position: absolute;
   left: 0;
   right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .start_btn {
@@ -88,6 +91,15 @@ p {
   background-color: rgb(255, 220, 3);
 }
 
+.overlay {
+  display: none;
+}
+
+.overlay > h1 {
+  padding: 0px 50px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 720px) {
   canvas,
   .start-screen,
@@ -97,6 +109,20 @@ p {
 
   .btn-descripton-box {
     display: none;
+  }
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: burlywood;
+    z-index: 50;
+    display: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
