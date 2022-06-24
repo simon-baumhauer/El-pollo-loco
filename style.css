@@ -37,70 +37,13 @@ p {
 
 .button,
 p {
-  z-index: 1;
-  position: absolute;
-  top: 520px;
   font-weight: bold;
+  padding-left: 10px;
 }
 
-.up_btn {
-  top: 640px;
+.btn-2 {
   background-color: grey;
-  width: 60px;
-  left: 150px;
-}
-
-.up-text {
-  top: 640px;
-  left: 0px;
-}
-
-.right_btn {
-  top: 680px;
-  left: 150px;
-  background-color: grey;
-  width: 60px;
-}
-
-.right-text {
-  top: 680px;
-  left: 0px;
-}
-
-.left_btn {
-  top: 720px;
-  left: 150px;
-  background-color: grey;
-  width: 60px;
-}
-
-.left-text {
-  top: 720px;
-  left: 0px;
-}
-
-.jump_btn {
-  top: 760px;
-  left: 150px;
-  background-color: grey;
-  width: 60px;
-}
-
-.jump-text {
-  top: 760px;
-  left: 0px;
-}
-
-.throw_btn {
-  top: 800px;
-  left: 150px;
-  background-color: grey;
-  width: 60px;
-}
-
-.throw-text {
-  top: 800px;
-  left: 0px;
+  width: 80px;
 }
 
 .fullscreen_btn {
@@ -115,6 +58,15 @@ p {
 
 .fullscreen_btn img {
   width: 30px;
+}
+
+.btn-descripton-box {
+  position: absolute;
+  top: 600px;
+  width: 200px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 100px;
 }
 
 @media only screen and (max-width: 720px) {
