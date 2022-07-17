@@ -118,6 +118,10 @@ class Character extends MovableObject {
     }, 500);
   }
 
+  backgroundSound() {
+    this.myMusic.play();
+  }
+
   /**
    * This function animates the character to be dead
    */
