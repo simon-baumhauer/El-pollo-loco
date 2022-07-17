@@ -77,7 +77,6 @@ class Character extends MovableObject {
    * This function has several build in animations of the character and conditions that invoke other animations
    */
   animate() {
-    this.myMusic.play();
     this.myMusic.volume = 0.1;
     setInterval(() => {
       this.walking_sound.pause();
