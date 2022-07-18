@@ -68,33 +68,33 @@ window.addEventListener("keydown", function (e) {
 });
 
 function touchDownLeft() {
-  keyborad.LEFT = true;
+  keyboard.LEFT = true;
 }
 
 function touchUpLeft() {
-  keyborad.LEFT = false;
+  keyboard.LEFT = false;
 }
 
 function touchDownRight() {
-  keyborad.RIGHT = true;
+  keyboard.RIGHT = true;
 }
 
 function touchUpRight() {
-  keyborad.RIGHT = false;
+  keyboard.RIGHT = false;
 }
 
 function touchDownJump() {
-  keyborad.UP = true;
+  keyboard.UP = true;
 }
 
 function touchUpJump() {
-  keyborad.UP = false;
+  keyboard.UP = false;
 }
 
 function touchDownThrow() {
-  keyborad.D = true;
+  keyboard.D = true;
 }
 
 function touchUpThrow() {
-  keyborad.D = false;
+  keyboard.D = false;
 }
