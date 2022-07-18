@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="js/models/drawable-object.class.js"></script>
     <script src="js/models/movable-object.class.js"></script>
     <script src="js/models/character.class.js"></script>
@@ -30,7 +33,9 @@
 
   <body onload="initLevel(), init()">
 
-    
+    <h1>El-Pollo-Loco</h1>
+
+     <!--Canvas-->
 
     <div class="canvas_container">
       <img
@@ -40,22 +45,41 @@
       src="img/9.Intro _ Outro Image/Start Screen/Opción 1.png"
       alt=""
     />
-      <canvas id="canvas" width="720" height="480">
-    
-      </canvas>
+      <canvas id="canvas" width="720" height="480"></canvas>
       <button class="fullscreen_btn" onclick="fullscreen()">
         <img
         src="img/9.Intro _ Outro Image/Start Screen/maximize-icon.svg"
         alt=""
       />
       </button>
-
-      <div class="panel">
-     
-      
-     
-      </div>
     </div>
+
+     <!--Smartphone-->
+     <div class="d-none-smartphone-panel">
+      <div class="smartphone " id="smartphone">
+        <div>
+        <div class="left-run " ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
+            <img class="arrows" src="img/smartphone-panel/arrow-18-64.png" alt="">
+        </div>
+        <div class="right-run" ontouchstart="touchDownRight()" ontouchend="touchUpRight()">
+           <img class="arrows" src="img/smartphone-panel/arrow-118-64.png" alt="">
+        </div>
+        </div>
+        <div>
+          <div class="jump" ontouchstart="touchDownJump()" ontouchend="touchUpJump()">
+            <img class="arrows" src="img/smartphone-panel/base-jumping-64.png" alt="">
+         </div>
+         <div class="bottel" ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()">
+            <img class="arrows" src="img/smartphone-panel/bottel.png">
+             
+         </div>
+        </div>
+    </div>
+     </div>
+    
+
+
+ <!--Details-->
     <div class="console">
       <button
       class="button start_btn"

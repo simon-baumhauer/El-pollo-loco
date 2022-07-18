@@ -4,12 +4,17 @@ html {
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-height: 100vh;
   margin: 0;
-  background-color: darkgoldenrod;
+  background-image: url(img/mexico-hintergrund.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-position-y: bottom;
+  overflow-y: hidden;
 }
 
 canvas {
@@ -25,32 +30,6 @@ canvas {
   display: none;
 }
 
-.button {
-  width: 200px;
-  height: 30px;
-  background-color: rgb(255, 220, 3);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-p {
-  padding: 10px;
-  width: 150px;
-  margin: 0;
-}
-
-.button,
-p {
-  font-weight: bold;
-  padding-left: 10px;
-}
-
-.btn-2 {
-  background-color: grey;
-  width: 80px;
-}
-
 .fullscreen_btn {
   position: absolute;
   background: transparent;
@@ -64,30 +43,14 @@ p {
   width: 30px;
 }
 
-.btn-descripton-box {
-}
-
-.button-descrition-row {
-  display: flex;
-  width: 250px;
-}
-
-.panel {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .start_btn {
-  z-index: 30;
-  top: 520px;
+  margin: 20px 0px;
   width: 200px;
   height: 30px;
   background-color: rgb(255, 220, 3);
 }
+
+/*Buttondescripton*/
 
 .console {
   display: flex;
@@ -95,6 +58,99 @@ p {
   width: 100%;
   flex-direction: column;
 }
+
+.btn-descripton-box {
+  margin-top: 10px;
+}
+
+.button-descrition-row {
+  display: flex;
+  width: 350px;
+}
+
+.button {
+  width: 200px;
+  height: 30px;
+  background-color: rgb(255, 220, 3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button,
+p {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.btn-2 {
+  background-color: grey;
+  width: 90px;
+}
+
+p {
+  padding: 10px;
+  width: 180px;
+  margin: 0;
+  color: yellow;
+}
+
+/*Smartphone panel*/
+
+.smartphone {
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.arrows {
+  width: 35px;
+}
+
+.left-run,
+.right-run,
+.jump,
+.bottel {
+  font-size: 30px;
+  background-color: white;
+  border-radius: 100%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.left-run {
+  top: -150px;
+  left: -300px;
+}
+
+.right-run {
+  top: -70px;
+  left: -300px;
+}
+
+.jump {
+  top: -150px;
+  left: 280px;
+}
+
+.bottel {
+  top: -70px;
+  left: 280px;
+}
+
+.d-none-smartphone-panel {
+  display: none;
+  width: 100%;
+}
+
+/*Media Queries*/
 
 @media only screen and (max-width: 720px) {
   canvas,
@@ -105,6 +161,10 @@ p {
 
   .btn-descripton-box {
     display: none;
+  }
+
+  .d-none-smartphone-panel {
+    display: unset;
   }
 }
 

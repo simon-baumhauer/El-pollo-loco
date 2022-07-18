@@ -66,3 +66,35 @@ window.addEventListener("keydown", function (e) {
     e.preventDefault();
   }
 });
+
+function touchDownLeft() {
+  keyborad.LEFT = true;
+}
+
+function touchUpLeft() {
+  keyborad.LEFT = false;
+}
+
+function touchDownRight() {
+  keyborad.RIGHT = true;
+}
+
+function touchUpRight() {
+  keyborad.RIGHT = false;
+}
+
+function touchDownJump() {
+  keyborad.UP = true;
+}
+
+function touchUpJump() {
+  keyborad.UP = false;
+}
+
+function touchDownThrow() {
+  keyborad.D = true;
+}
+
+function touchUpThrow() {
+  keyborad.D = false;
+}
