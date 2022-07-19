@@ -67,6 +67,19 @@ window.addEventListener("keydown", function (e) {
   }
 });
 
+/**
+ * This function allow to change between mobile and keyboard control
+ */
+function toggleSwitch() {
+  let swithces = document.getElementById("smartphone");
+  swithces.classList.toggle("d-none");
+  console.log("clicked");
+}
+
+/**
+ * This function are executed via touch buttons (smartphone version)
+ */
+
 function touchDownLeft() {
   keyboard.LEFT = true;
 }

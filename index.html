@@ -28,6 +28,8 @@
     <script src="js/levels/level_1.js"></script>
     <script src="js/models/lost-screen.class.js"></script>
     <script src="js/game.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>El pollo loco</title>
   </head>
 
@@ -52,10 +54,16 @@
         alt=""
       />
       </button>
+      
     </div>
 
     <!--Details-->
     <div class="console">
+      <div onclick="toggleSwitch()" class="form-check form-switch" style="display: flex; align-items: center;justify-content: center;">
+        <input class="form-check-input" style="height:25px;
+        width: 50px;" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Mobile Swtichs</label>
+    </div>
       <button
       class="button start_btn"
       id="start-btn"
@@ -84,27 +92,28 @@
     
     </div>
     </div>
+         <!--Smartphone-->
+         <div class="d-none-smartphone-panel">
+          <div class="smartphone " id="smartphone">
+            <div>
+            <div class="left-run"   ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
+                <img class="arrows" src="img/smartphone-panel/arrow-118-64.png" alt="">
+            </div>
+            <div class="right-run"  ontouchstart="touchDownRight()" ontouchend="touchUpRight()">
+              <img class="arrows" src="img/smartphone-panel/arrow-18-64.png" alt="">
+            </div>
+            </div>
+            <div>
+              <div class="jump"   ontouchstart="touchDownJump()" ontouchend="touchUpJump()">
+                <img class="arrows" src="img/smartphone-panel/base-jumping-64.png" alt="">
+             </div>
+             <div  class="bottel"  ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()">
+                <img class="arrows" src="img/smartphone-panel/bottel.png">
+                 
+             </div>
+            </div>
+        </div>
+         </div>
 
-     <!--Smartphone-->
-     <div class="d-none-smartphone-panel">
-      <div class="smartphone " id="smartphone">
-        <div>
-        <div class="left-run"  onmousedown="touchDownLeft()" onmouseup="touchUpLeft()" ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
-            <img class="arrows" src="img/smartphone-panel/arrow-118-64.png" alt="">
-        </div>
-        <div class="right-run" onmousedown="touchDownRight()" onmouseup="touchUpRight()" ontouchstart="touchDownRight()" ontouchend="touchUpRight()">
-          <img class="arrows" src="img/smartphone-panel/arrow-18-64.png" alt="">
-        </div>
-        </div>
-        <div>
-          <div class="jump" onclick="touchDownJump()"  onmousedown="touchDownJump()"  ontouchstart="touchDownJump()" ontouchend="touchUpJump()">
-            <img class="arrows" src="img/smartphone-panel/base-jumping-64.png" alt="">
-         </div>
-         <div  class="bottel" onmousedown="touchDownThrow()" onmouseup="touchUpThrow()" ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()">
-            <img class="arrows" src="img/smartphone-panel/bottel.png">
-             
-         </div>
-        </div>
-    </div>
-     </div>
+
 </html>
