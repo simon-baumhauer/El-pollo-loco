@@ -131,26 +131,6 @@ p {
   margin-bottom: 10px;
 }
 
-.left-run {
-  top: -150px;
-  left: -300px;
-}
-
-.right-run {
-  top: -70px;
-  left: -300px;
-}
-
-.jump {
-  top: -150px;
-  left: 280px;
-}
-
-.bottel {
-  top: -70px;
-  left: 280px;
-}
-
 .d-none-smartphone-panel {
   display: none;
   width: 100%;
@@ -168,10 +148,6 @@ p {
   .btn-descripton-box {
     display: none;
   }
-
-  .d-none-smartphone-panel {
-    display: unset;
-  }
 }
 
 @media only screen and (max-height: 480px) {
@@ -187,12 +163,14 @@ p {
   .start_btn {
     top: 300px;
   }
+}
 
+@media only screen and (max-width: 480px) {
   .left-run,
   .right-run,
   .jump,
   .bottel {
-    font-size: 30px;
+    font-size: 15px;
     background-color: white;
     border-radius: 100%;
     padding: 10px;
@@ -203,5 +181,9 @@ p {
     border: 1px solid black;
     justify-content: center;
     margin-bottom: 10px;
+  }
+
+  .arrows {
+    width: 18px;
   }
 }
