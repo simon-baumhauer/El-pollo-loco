@@ -97,6 +97,12 @@ p {
 
 /*Smartphone panel*/
 
+.smartphone-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
 .smartphone {
   display: flex;
   padding: 0 20px;
@@ -180,5 +186,22 @@ p {
   }
   .start_btn {
     top: 300px;
+  }
+
+  .left-run,
+  .right-run,
+  .jump,
+  .bottel {
+    font-size: 30px;
+    background-color: white;
+    border-radius: 100%;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    justify-content: center;
+    margin-bottom: 10px;
   }
 }

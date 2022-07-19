@@ -71,8 +71,8 @@ window.addEventListener("keydown", function (e) {
  * This function allow to change between mobile and keyboard control
  */
 function toggleSwitch() {
-  let swithces = document.getElementById("smartphone");
-  swithces.classList.toggle("d-none");
+  let switches = document.getElementById("smartphone");
+  switches.classList.toggle("d-none-smartphone-panel");
   console.log("clicked");
 }
 

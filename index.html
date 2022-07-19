@@ -39,7 +39,7 @@
 
      <!--Canvas-->
 
-    <div class="canvas_container">
+    <div class="canvas_container" style="position: relative;">
       <img
       class="start-screen"
       id="start-screen"
@@ -54,6 +54,28 @@
         alt=""
       />
       </button>
+       <!--Smartphone-->
+       <div class="d-none-smartphone-panel smartphone-container" id="smartphone">
+        <div class="smartphone">
+          <div>
+          <div class="left-run"   ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
+              <img class="arrows" src="img/smartphone-panel/arrow-118-64.png" alt="">
+          </div>
+          <div class="right-run"  ontouchstart="touchDownRight()" ontouchend="touchUpRight()">
+            <img class="arrows" src="img/smartphone-panel/arrow-18-64.png" alt="">
+          </div>
+          </div>
+          <div>
+            <div class="jump"   ontouchstart="touchDownJump()" ontouchend="touchUpJump()">
+              <img class="arrows" src="img/smartphone-panel/base-jumping-64.png" alt="">
+           </div>
+           <div  class="bottel"  ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()">
+              <img class="arrows" src="img/smartphone-panel/bottel.png">
+               
+           </div>
+          </div>
+      </div>
+       </div>
       
     </div>
 
@@ -91,29 +113,7 @@
     </span>
     
     </div>
-    </div>
-         <!--Smartphone-->
-         <div class="d-none-smartphone-panel">
-          <div class="smartphone " id="smartphone">
-            <div>
-            <div class="left-run"   ontouchstart="touchDownLeft()" ontouchend="touchUpLeft()">
-                <img class="arrows" src="img/smartphone-panel/arrow-118-64.png" alt="">
-            </div>
-            <div class="right-run"  ontouchstart="touchDownRight()" ontouchend="touchUpRight()">
-              <img class="arrows" src="img/smartphone-panel/arrow-18-64.png" alt="">
-            </div>
-            </div>
-            <div>
-              <div class="jump"   ontouchstart="touchDownJump()" ontouchend="touchUpJump()">
-                <img class="arrows" src="img/smartphone-panel/base-jumping-64.png" alt="">
-             </div>
-             <div  class="bottel"  ontouchstart="touchDownThrow()" ontouchend="touchUpThrow()">
-                <img class="arrows" src="img/smartphone-panel/bottel.png">
-                 
-             </div>
-            </div>
-        </div>
-         </div>
+    </div>       
 
 
 </html>
