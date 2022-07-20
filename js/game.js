@@ -24,8 +24,17 @@ function fullscreen() {
  */
 
 function playBackgroundMusic() {
-  this.background_sound.play();
+  background_sound.paused ? background_sound.play() : music_stop();
 }
+
+function music_stop() {
+  background_sound.pause();
+  background_sound.currentTime = 0;
+}
+
+/**
+ * These are the Keybaord commands
+ */
 
 window.addEventListener("keydown", (event) => {
   if (event.keyCode === 39) {
