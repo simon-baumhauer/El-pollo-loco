@@ -39,6 +39,17 @@ canvas {
   cursor: pointer;
 }
 
+.music_btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  right: 45px;
+  top: 4px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
 .fullscreen_btn img {
   width: 30px;
 }

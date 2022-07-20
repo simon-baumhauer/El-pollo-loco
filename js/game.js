@@ -19,6 +19,14 @@ function fullscreen() {
   canvas.requestFullscreen();
 }
 
+/**
+ * This function plays the background music
+ */
+
+function playBackgroundMusic() {
+  this.background_sound.play();
+}
+
 window.addEventListener("keydown", (event) => {
   if (event.keyCode === 39) {
     keyboard.RIGHT = true;
